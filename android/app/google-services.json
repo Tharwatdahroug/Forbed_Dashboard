@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "414775154733",
+    "project_id": "forbed-91065",
+    "storage_bucket": "forbed-91065.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:414775154733:android:f1e0b0218cc6183dc6c0a4",
+        "android_client_info": {
+          "package_name": "com.example.forbeddashboard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "414775154733-tl3lm49f73sg6f4e7f392lg1ouivnqiu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWnoceGyRaRszjr7UoZ8GXlPF9UvahBBQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "414775154733-tl3lm49f73sg6f4e7f392lg1ouivnqiu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
