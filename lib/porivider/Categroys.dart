@@ -10,6 +10,7 @@ import "package:firebase_storage/firebase_storage.dart" as firebase_storage;
 
 class CategroyProvider with ChangeNotifier {
   List<Categroys> CategoryModelList = [];
+  List CategoryList = [];
   late Categroys CategoryModel;
   String fileName = "";
   String uploadedImageUrl = "";
@@ -112,7 +113,12 @@ class CategroyProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  // getId() {
-  //   return idToke;
-  // }
+  postCategoryList(value, item) {
+    CategoryList = [value, item];
+    notifyListeners();
+  }
+
+  List get getCategoryList {
+    return CategoryList;
+  }
 }

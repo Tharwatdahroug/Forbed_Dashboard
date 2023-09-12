@@ -9,13 +9,13 @@ class FeatureProvider with ChangeNotifier {
     String name,
     String description,
     String Category,
-    int priceFAC,
+    double priceFAC,
     String productCode,
     List<dynamic> Sizes,
     List<dynamic> Colors,
     List<dynamic> image,
-    int discount,
-    int price,
+    double discount,
+    double price,
   ) async {
     await FirebaseFirestore.instance
         .collection('Feature')
@@ -41,13 +41,13 @@ class FeatureProvider with ChangeNotifier {
       String name,
       String description,
       String Category,
-      int priceFAC,
+      double priceFAC,
       String productCode,
       List<dynamic> Sizes,
       List<dynamic> Colors,
       List<dynamic> image,
-      int discount,
-      int price,
+      double discount,
+      double price,
       var id) async {
     await FirebaseFirestore.instance
         .collection('Feature')

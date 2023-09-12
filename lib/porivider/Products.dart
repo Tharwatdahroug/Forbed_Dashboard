@@ -10,7 +10,8 @@ import "package:firebase_storage/firebase_storage.dart" as firebase_storage;
 class ProductsProvider with ChangeNotifier {
   List<Products> productModelList = [];
   List<String> productImagesUrls = [];
-
+  List<Color> Colorers = [];
+  List<String> Size = [];
   late Products productModel;
   String fileName = "";
   String uploadedImageUrl = "";
@@ -18,15 +19,15 @@ class ProductsProvider with ChangeNotifier {
     String name,
     String description,
     String Category,
-    int priceFAC,
+    double priceFAC,
     String productCode,
     // ignore: non_constant_identifier_names
-    List<dynamic> Sizes,
+    List<String> Sizes,
     // ignore: non_constant_identifier_names
     List<Color> Colors,
-    List<dynamic> image,
-    int discount,
-    int price,
+    List image,
+    double discount,
+    double price,
   ) async {
     await FirebaseFirestore.instance
         .collection('Products')
@@ -51,13 +52,13 @@ class ProductsProvider with ChangeNotifier {
       String name,
       String description,
       String Category,
-      int priceFAC,
+      double priceFAC,
       String productCode,
       List<dynamic> Sizes,
       List<dynamic> Colors,
       List<dynamic> image,
-      int discount,
-      int price,
+      double discount,
+      double price,
       var id) async {
     await FirebaseFirestore.instance
         .collection('Products')
@@ -143,8 +144,26 @@ class ProductsProvider with ChangeNotifier {
     return uploadedImageUrl;
   }
 
+  postColor(value) {
+    Colorers.add(value);
+    notifyListeners();
+  }
+
+  postSize(value) {
+    Size.add(value);
+    notifyListeners();
+  }
+
   List<String> get getImageList {
     return productImagesUrls;
+  }
+
+  List<Color> get getcolorList {
+    return Colorers;
+  }
+
+  List<String> get getSize {
+    return Size;
   }
 
   Future<void> deledImageUrl() async {

@@ -1,14 +1,14 @@
 class Products {
   final String name;
   final String description;
-  final int priceFAC;
+  final double priceFAC;
   final String Category;
   final String productCode;
   final List<dynamic> Sizes;
   final List<dynamic> Colors;
   final List<dynamic> image;
-  final int discount;
-  final int price;
+  final double discount;
+  final double price;
 
   Products({
     required this.image,

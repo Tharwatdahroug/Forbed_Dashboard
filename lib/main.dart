@@ -50,23 +50,24 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Flutter Admin Panel',
-          theme: ThemeData.dark().copyWith(
-            scaffoldBackgroundColor: Colors.black,
-            textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
-                .apply(bodyColor: Colors.white),
-            canvasColor: secondaryColor,
-            useMaterial3: true,
-          ),
-          home: CategroyScreen()
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Admin Panel',
+        theme: ThemeData.dark().copyWith(
+          scaffoldBackgroundColor: Colors.black,
+          textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
+              .apply(bodyColor: Colors.white),
+          canvasColor: secondaryColor,
+          useMaterial3: true,
+        ),
+        home: ProductScreen(),
+        // CategroyScreen()
 
-          /// ProductScreen()
-          //  AdvertismentScreen(),
-          // CategroyScreen(),
-          // child: MainScreen(),
-          // CategroyScreen(),
-          ),
+        /// ProductScreen()
+        //  AdvertismentScreen(),
+        // CategroyScreen(),
+        // child: MainScreen(),
+        // CategroyScreen(),
+      ),
     );
   }
 }
