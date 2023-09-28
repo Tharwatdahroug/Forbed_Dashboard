@@ -744,9 +744,30 @@ class ProductScreen extends StatelessWidget {
                                                           SizedBox(
                                                             height: 30,
                                                           ),
-                                                          ColorPicker(
+                                                          BlockPicker(
                                                               pickerColor:
                                                                   color,
+                                                              availableColors: [
+                                                                Colors.blue,
+                                                                Colors.black,
+                                                                Colors.white,
+                                                                Colors.green,
+                                                                Colors.orange,
+                                                                Colors.pink,
+                                                                Colors.purple,
+                                                                Colors.yellow,
+                                                                Colors
+                                                                    .deepOrange,
+                                                                Colors
+                                                                    .cyanAccent,
+                                                                Colors.teal,
+                                                                Colors
+                                                                    .indigoAccent,
+                                                                Colors.amber,
+                                                                Colors.cyan,
+                                                                Colors.blueGrey,
+                                                                Colors.red,
+                                                              ],
                                                               onColorChanged:
                                                                   (value) {
                                                                 color = value;
@@ -762,8 +783,7 @@ class ProductScreen extends StatelessWidget {
                                                           ElevatedButton.icon(
                                                             onPressed:
                                                                 () async {
-                                                              // Colorers.add(
-                                                              //     color);
+                                                              print(color);
                                                               await Provider.of<
                                                                           ProductsProvider>(
                                                                       context,
@@ -810,67 +830,22 @@ class ProductScreen extends StatelessWidget {
                                 builder: (context, product, child) {
                               return MyButton(
                                   name: "Add Product",
-                                  onPressed: product.getImageList.isNotEmpty &
-                                          product.getcolorList.isNotEmpty &
-                                          product.getSize.isNotEmpty &
-                                          _nameProduccontroller
-                                              .toString()
-                                              .isNotEmpty &
-                                          _priceFACcontroller.text.isNotEmpty &
-                                          _productCodecontroller
-                                              .toString()
-                                              .isNotEmpty &
-                                          _pricecontroller
-                                              .toString()
-                                              .isNotEmpty &
-                                          _descriptioncontroller
-                                              .toString()
-                                              .isNotEmpty &
-                                          _discountcontroller
-                                              .toString()
-                                              .isNotEmpty &
-                                          _categroynamecontroller
-                                              .toString()
-                                              .isNotEmpty
-                                      ? () {
-                                          product.AddProduct(
-                                              _nameProduccontroller.toString(),
-                                              _descriptioncontroller.toString(),
-                                              _categroynamecontroller
-                                                  .toString(),
-                                              double.parse(_priceFACcontroller
-                                                  .toString()),
-                                              _productCodecontroller.toString(),
-                                              product.getSize,
-                                              product.getcolorList,
-                                              product.getImageList,
-                                              double.parse(_discountcontroller
-                                                  .toString()),
-                                              double.parse(
-                                                  _pricecontroller.toString()));
-                                          Navigator.pop(context);
-                                        }
-                                      : () {
-                                          print(
-                                              product.getImageList.isNotEmpty);
-                                          print(
-                                              product.getcolorList.isNotEmpty);
-                                          print(product.getSize.isNotEmpty);
-                                          print(_nameProduccontroller
-                                              .text.isNotEmpty);
-                                          print(_categroynamecontroller
-                                              .text.isNotEmpty);
-                                          print(_descriptioncontroller
-                                              .text.isNotEmpty);
-                                          print(_discountcontroller
-                                              .text.isNotEmpty);
-                                          print(_priceFACcontroller
-                                              .text.isNotEmpty);
-                                          print(
-                                              _pricecontroller.text.isNotEmpty);
-                                          print(_productCodecontroller
-                                              .text.isNotEmpty);
-                                        },
+                                  onPressed: () {
+                                    product.AddProduct(
+                                        _nameProduccontroller.text,
+                                        _descriptioncontroller.text,
+                                        _categroynamecontroller.text,
+                                        _priceFACcontroller.text,
+                                        _productCodecontroller.text,
+                                        product.getSize,
+                                        product.getcolorList,
+                                        product.getImageList,
+                                        _discountcontroller.text,
+                                        _priceFACcontroller.text);
+                                    print(
+                                        "-----------------${product.getcolorList.cast()}---------------");
+                                    Navigator.pop(context);
+                                  },
                                   colors: Color.fromARGB(255, 188, 113, 0),
                                   height: 50,
                                   width: 400,

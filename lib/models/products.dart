@@ -1,14 +1,16 @@
+import 'package:flutter/material.dart';
+
 class Products {
   final String name;
   final String description;
-  final double priceFAC;
+  final String priceFAC;
   final String Category;
   final String productCode;
-  final List<dynamic> Sizes;
-  final List<dynamic> Colors;
-  final List<dynamic> image;
-  final double discount;
-  final double price;
+  final List<String> Sizes;
+  final List<String> Colors;
+  final List image;
+  final String discount;
+  final String price;
 
   Products({
     required this.image,

@@ -42,9 +42,9 @@ class MyApp extends StatelessWidget {
             return CategroyProvider();
           },
         ),
-        ChangeNotifierProvider(
-          create: (context) => FeatureProvider(),
-        ),
+        // ChangeNotifierProvider(
+        //   create: (context) => FeatureProvider(),
+        // ),
         ChangeNotifierProvider(
           create: (context) => ProductsProvider(),
         ),
@@ -60,6 +60,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         home: ProductScreen(),
+
         // CategroyScreen()
 
         /// ProductScreen()

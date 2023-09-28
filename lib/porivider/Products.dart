@@ -6,6 +6,7 @@ import 'package:uuid/uuid.dart';
 import 'dart:typed_data';
 import 'package:file_picker/file_picker.dart';
 import "package:firebase_storage/firebase_storage.dart" as firebase_storage;
+import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 
 class ProductsProvider with ChangeNotifier {
   List<Products> productModelList = [];
@@ -19,15 +20,13 @@ class ProductsProvider with ChangeNotifier {
     String name,
     String description,
     String Category,
-    double priceFAC,
+    String priceFAC,
     String productCode,
-    // ignore: non_constant_identifier_names
     List<String> Sizes,
-    // ignore: non_constant_identifier_names
     List<Color> Colors,
-    List image,
-    double discount,
-    double price,
+    List<String> image,
+    String discount,
+    String price,
   ) async {
     await FirebaseFirestore.instance
         .collection('Products')
@@ -37,7 +36,7 @@ class ProductsProvider with ChangeNotifier {
           description: description,
           Category: Category,
           priceFAC: priceFAC,
-          Colors: Colors,
+          Colors: [],
           image: image,
           discount: discount,
           Sizes: Sizes,
@@ -52,13 +51,13 @@ class ProductsProvider with ChangeNotifier {
       String name,
       String description,
       String Category,
-      double priceFAC,
+      String priceFAC,
       String productCode,
-      List<dynamic> Sizes,
-      List<dynamic> Colors,
-      List<dynamic> image,
-      double discount,
-      double price,
+      List<String> Sizes,
+      List<Color> Colors,
+      List image,
+      String discount,
+      String price,
       var id) async {
     await FirebaseFirestore.instance
         .collection('Products')
@@ -69,7 +68,7 @@ class ProductsProvider with ChangeNotifier {
             description: description,
             Category: Category,
             priceFAC: priceFAC,
-            Colors: Colors,
+            Colors: Colors as dynamic,
             image: image,
             discount: discount,
             Sizes: Sizes,
